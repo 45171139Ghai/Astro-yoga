@@ -1,0 +1,45 @@
+
+@use "src/base";
+
+.card-container {
+    
+    background-color: white;
+    margin: 0 auto;
+    width: 350px;
+    margin-top: 160px;
+    @include base.flex-position;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+    @media screen and (min-width: 1000px){
+        // width: 350px;
+        
+    }
+  
+
+  .yoga-offer {
+      text-align: left;
+
+      padding: 2.5em;
+      @include base.flex-position($direction:column);
+      & h3 {
+          background-color: #E3E0F3;
+          padding: .75em;
+          color: base.$ascend;
+          letter-spacing: .25em; 
+      }
+
+      & p {
+          line-height: 1.4;
+          padding: 1em;
+      }
+    & .marginTop {
+        margin-top: -.2em;
+        
+            }
+    & .marginBottom {
+        margin-bottom: 0;
+        
+            }
+  }
+}

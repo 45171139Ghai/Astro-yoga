@@ -1,0 +1,47 @@
+@use "src/base";
+
+.about-container {
+   
+    width: 100%;
+    padding: 1em;
+    background: white;
+    min-height: 100vh;
+    @include base.flex-position;
+    margin: 0 auto;
+    
+    .containerTwo {
+     
+        // z-index: -1;
+        // background-color: whitesmoke;
+      
+       
+        @include base.background("./components/Assets/bw.png");
+        opacity: .75;
+        position: cover;
+        border-radius: 8px;
+       
+        overflow: hidden;
+        width: 70%;
+        padding: 2em;
+        max-width: 1000px;
+        @include base.flex-position($direction: column);
+        h4 {
+            margin-top: 10em;
+            background-color: whitesmoke;
+            padding: .75em;
+            text-transform: uppercase;
+        }
+
+        article {
+            background-color: rgba(0, 0, 0, 0.769);
+            margin-top: 2em;
+            padding: 1em;
+            p {
+               
+                color: whitesmoke;
+            }
+        }
+
+
+    }
+}

@@ -1,0 +1,54 @@
+@use "src/base";
+
+.footer-container {
+    width: 100%;
+   
+    padding: 1em;
+    margin: 0 auto;
+    background-color:grey;
+    @include base.flex-position;
+    
+
+    .footer-padding {
+        @include base.flex-position($justify:space-between);
+        width: 90%;
+        //padding: 2em;
+        //margin-bottom: -4em;
+          
+        ul {padding: 0; margin: 0; list-style: none;}
+
+        .email-container {
+            border-top: solid white;
+            padding: 1em;
+
+           a {
+               color: lightgray;
+
+               &:hover {
+                   color:base.$primaryColor;
+                        }
+                };
+        }
+
+        .links {
+             //background: base.$logoColor;
+             border-bottom: solid white;
+             
+             padding: 1.5em;
+             @include base.flex-position;
+             .a {
+                 margin: 1em;
+                 color: base.$logoColor;
+
+                 &:hover {
+                    color: base.$primaryColor;
+                    opacity: .5;
+                 }
+
+                }
+            }   
+    }
+    
+
+    
+}

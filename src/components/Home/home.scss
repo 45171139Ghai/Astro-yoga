@@ -1,0 +1,74 @@
+@use "src/base";
+
+
+.message-container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+     @include base.flex-position($direction:space-between);
+
+    @media only screen and (max-width: 650px){
+    background-image: url("../Assets/martha.svg") ;
+   // background-color: rgb(90, 8, 8);
+    background-size: cover;
+    min-width: 100%;
+    min-height: 100%;
+    background-position: bottom center;
+        
+    }
+    
+
+    .image-container{
+         
+       width: 100%;
+   
+        @include base.flex-position($direction: column);
+        
+        @media (min-width: 650px){
+            & {
+                 background-image: url("../Assets/martha.svg") ;
+                 background-size: cover;
+                
+                min-width: 100%;
+                min-height: 100%;
+                background-position: center center;
+                .backgroundImage{
+                    display: none;
+                }
+                //background-color: whitesmoke;
+            } // background media
+        } // close media
+
+        .backgroundImage {
+            width: 500px;
+        }
+
+
+
+        .wrapper{@include base.content-wrapper};
+
+
+        @media (max-width: 650px) {
+            .backgroundImage {
+                display: none;
+               // height: 1px;
+            }
+            
+        }
+    }
+
+
+    // .backgroundImage {
+    //     width: 1000px;
+    //     //height: 1600px;
+    // }
+
+    // @media (max-width: 650px) {
+    //     .backgroundImage {
+    //         width: 450px;
+    //        // height: 1px;
+    //     }
+        
+    // }
+}

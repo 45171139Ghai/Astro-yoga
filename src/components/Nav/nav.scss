@@ -1,0 +1,117 @@
+@use "src/base";
+
+.navBar {
+  // @include base.content-wrapper;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  height: 80px;
+  //width: 100%;
+  
+  background-color: white;
+  color: base.$ascend;
+  //font-family: base.$ff-secondary;
+  text-transform: uppercase;
+  @include base.flex-position($justify: space-between);
+  padding: 0 2em;
+
+  .logo {
+    text-decoration: none;
+    color: base.$logoColor;
+    font-weight: bold;
+    font-size: 1.5em;
+    letter-spacing: .125;
+    font-family: base.$ff-secondary;
+  }
+
+  .menu-items {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 20px;
+    list-style: none;
+
+    .nav-link {
+      text-decoration: none;
+      color: base.$ascend;
+      font-size: .825em;
+      transition: .5s color background-color cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      
+      &:hover {
+        color: white;
+        background-color: base.$logoColor;
+
+      }
+    } // close links
+
+  } // close menu item
+
+  .nav-icon {
+      display: none;
+  }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .navBar {
+        position: relative;
+
+        .menu-items {
+            @include base.flex-position($direction: column);
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            top: 80px;
+            left: -100%;
+            transition: .5s all;
+            z-index: 100;
+            &.active {
+                background-color: base.$ascend;
+                left: 0;
+                
+                .nav-item {
+                    padding: 10px 0;
+                    
+
+                    .nav-link {
+                        color: base.$primaryColor;
+                    } // close link
+                } //close nav item
+            } // close active class
+
+        
+        } // close menu items
+
+        .nav-icon {
+            display: flex;
+            font-size: 2em;
+        }
+    } // close navBar
+    
+}
+
+
+// .navBar{
+//     display: flex;
+//     justify-content: space-around;
+//     align-items: center;
+//     width: 100%;
+//     //background-color: rgb(49, 48, 48);
+//     background-color: white;
+//     z-index: 100;
+
+//     position: fixed;
+//     top: 0;
+
+//     height: 80px;
+
+//     .logo{
+//         color: base.$logoColor;
+//         font-weight: bold;
+//         font-size: 1.5em;
+//         letter-spacing: .125;
+//     }
+
+//     .item,.logo {font-family: base.$ff-secondary;}
+// }

@@ -1,0 +1,28 @@
+@use "src/base";
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css");
+
+
+.contact-container{
+    margin-top: 160px;
+    height: 100vh;
+
+    div h2 {
+        text-align: center;
+        color: base.$logoColor;
+        margin: 35px 0 20px 0 !important;
+    }
+
+    .wrapper{
+        @include base.content-wrapper;
+    }
+
+    //background-color: rgb(232, 240, 244);
+    
+
+
+
+    @media screen and (max-width: 650px) {
+        margin-top: 80px;
+        
+    }
+}
